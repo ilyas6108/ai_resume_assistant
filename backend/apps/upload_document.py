@@ -2,9 +2,12 @@ from fastapi import UploadFile, File
 from fastapi.responses import JSONResponse
 import os
 from backend.apps.rag_process import rag_split_embedding_vector_store, get_answer_from_llm_vectorstore
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 ALLOWED_EXTENSION = [".pdf", ".docx"]
-UPLOAD_DIR =  "/app/upload_document"
+UPLOAD_DIR =  BASE_DIR / "upload_document"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 async def upload(file:UploadFile = File(...)):

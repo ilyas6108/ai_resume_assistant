@@ -7,12 +7,16 @@ from dotenv import load_dotenv
 from langchain_classic.retrievers.multi_query import MultiQueryRetriever
 from backend.apps.prompt import get_prompt
 from langchain_core.output_parsers import StrOutputParser
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 load_dotenv()
 
 embedding_model = MistralAIEmbeddings()
 llm_model = ChatMistralAI(model_name="mistral-small-latest")
-PERSIST_DIR = "/app/ai-db"
+PERSIST_DIR = BASE_DIR / "ai-db"
+os.makedirs(PERSIST_DIR, exist_ok=True)
 parser = StrOutputParser()
 
 def rag_split_embedding_vector_store(ext, file_path):
