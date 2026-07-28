@@ -1,0 +1,35 @@
+# --- LLM / RAG orchestration ---
+langchain
+langchain-mistralai
+langchain-community
+langchain-core
+
+# --- Resume parsing (PDF / DOCX) ---
+pypdf
+python-docx
+docx2txt
+
+numpy
+scikit-learn
+
+tiktoken
+
+# Vector Database
+chromadb
+
+# Embedding Models
+sentence-transformers
+
+# Environment Variables
+python-dotenv
+python-multipart
+
+# Data Handling
+pandas
+numpy
+
+tqdm
+requests
+
+fastapi
+uvicorn
