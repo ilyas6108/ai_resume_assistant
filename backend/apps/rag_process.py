@@ -5,14 +5,14 @@ from langchain_mistralai import MistralAIEmbeddings, ChatMistralAI
 import os
 from dotenv import load_dotenv
 from langchain_classic.retrievers.multi_query import MultiQueryRetriever
-from apps.prompt import get_prompt
+from backend.apps.prompt import get_prompt
 from langchain_core.output_parsers import StrOutputParser
 
 load_dotenv()
 
 embedding_model = MistralAIEmbeddings()
 llm_model = ChatMistralAI(model_name="mistral-small-latest")
-PERSIST_DIR = "ai-db"
+PERSIST_DIR = "/app/ai-db"
 parser = StrOutputParser()
 
 def rag_split_embedding_vector_store(ext, file_path):

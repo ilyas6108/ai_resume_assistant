@@ -1,7 +1,7 @@
 from fastapi import APIRouter, UploadFile, File
 import os
-from apps.upload_document import upload, ask_question
-from apps.request import UploadDocument, AskQuery
+from backend.apps.upload_document import upload, ask_question
+from backend.apps.request import UploadDocument, AskQuery
 
 router = APIRouter()
 
